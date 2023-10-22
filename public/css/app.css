@@ -11976,6 +11976,33 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.body {
-  color: #fff;
+body {
+  font-family: IRANSans, Roboto, Arial !important;
+  font-weight: 300;
+  direction: rtl;
+  background-color: #CFD8DC;
+}
+
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+input,
+textarea {
+  font-family: IRANSans, Roboto, Arial !important;
+}
+
+.todo-title {
+  color: #546E7A;
+}
+
+.list-group-numbered > .list-group-item::before {
+  content: none !important;
 }

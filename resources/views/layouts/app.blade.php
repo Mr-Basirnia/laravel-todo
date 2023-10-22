@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,9 @@
 
 <body>
 
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 
     <script src="{{ asset('/js/app.js') }}"></script>
 </body>
