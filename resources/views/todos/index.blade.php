@@ -13,25 +13,25 @@
 
                 <ol class="list-group list-group-numbered p-0 my-4">
 
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <div class="ms-2 ms-auto me-3">
+                    @foreach ($todos as $todo)
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div class="ms-2 ms-auto me-3">
 
-                            <h4>
-                                لورم ایپسوم
-                            </h4>
+                                <h4>{{ $todo->title }}</h4>
 
-                            <p class="m-0">
-                                <small>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                </small>
-                            </p>
+                                <p class="m-0">
+                                    <small>
+                                        {{ Str::limit($todo->description, 50, ' ...') }}
+                                    </small>
+                                </p>
 
-                        </div>
+                            </div>
 
-                        <a class="btn btn-danger btn-sm mx-2" href="#" role="button">پایان دادن</a>
-                        <a class="btn btn-dark btn-sm mx-2" href="#" role="button">نمایش</a>
+                            <a class="btn btn-danger btn-sm mx-2" href="#" role="button">پایان دادن</a>
+                            <a class="btn btn-dark btn-sm mx-2" href="#" role="button">نمایش</a>
 
-                    </li>
+                        </li>
+                    @endforeach
 
                 </ol>
 
