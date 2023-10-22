@@ -15,7 +15,7 @@ class TodoController extends Controller
      */
     public function index(Request $request)
     {
-        $todos = Todo::all();
+        $todos = Todo::paginate(5);
         return view('todos.index', compact('todos'));
     }
 }

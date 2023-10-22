@@ -21,3 +21,7 @@ textarea {
 .todo-title {
     color: #546E7A;
 }
+
+.list-group-numbered>.list-group-item::before {
+    content: none !important;
+}

@@ -13,7 +13,7 @@
 
                 <ol class="list-group list-group-numbered p-0 my-4">
 
-                    @foreach ($todos as $todo)
+                    @foreach ($todos as $index => $todo)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <div class="ms-2 ms-auto me-3">
 
@@ -34,19 +34,11 @@
                     @endforeach
 
                 </ol>
-
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link text-bg-secondary" href="#">قبلی</a></li>
-                        <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link text-bg-secondary" href="#">بعدی</a></li>
-                    </ul>
-                </nav>
-
             </div>
+            {{ $todos->links() }}
 
         </div>
+
+    </div>
     </div>
 @endsection
