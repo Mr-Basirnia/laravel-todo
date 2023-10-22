@@ -15,3 +15,5 @@ use App\Http\Controllers\TodoController;
 */
 
 Route::get('/', [TodoController::class, 'index'])->name('todos.index');
+
+Route::get('/todo/{id}', [TodoController::class, 'show'])->name('todos.show');

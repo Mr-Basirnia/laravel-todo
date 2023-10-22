@@ -18,4 +18,17 @@ class TodoController extends Controller
         $todos = Todo::paginate(5);
         return view('todos.index', compact('todos'));
     }
+
+
+    /**
+     * show single todo
+     *
+     * @param Request $request
+     * @param Todo $id
+     * @return void
+     */
+    public function show(Request $request, Todo $id)
+    {
+        return view('todos.show', compact('id'));
+    }
 }
