@@ -16,4 +16,8 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index'])->name('todos.index');
 
+Route::get('/todo/create', [TodoController::class, 'create'])->name('todos.create');
+
 Route::get('/todo/{id}', [TodoController::class, 'show'])->name('todos.show');
+
+Route::post('/todo', [TodoController::class, 'store'])->name('todos.store');

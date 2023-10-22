@@ -32,4 +32,28 @@ class TodoController extends Controller
         $todo = $id;
         return view('todos.show', compact('todo'));
     }
+
+
+    /**
+     * create new todo
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function create(Request $request)
+    {
+        return view('todos.create');
+    }
+
+
+    /**
+     * store new todo
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }

@@ -7,9 +7,17 @@
 
             <div class="todos my-5">
 
-                <h4 class="my-3 text-center todo-title">
-                    <mark> تسک های Todo</mark>
-                </h4>
+                <div class="d-flex align-items-center">
+
+                    <h4 class="my-3 text-center todo-title d-inline-block">
+                        <mark> تسک های Todo</mark>
+                    </h4>
+
+                    <a href="{{ route('todos.create') }}" class="me-auto btn btn-outline-danger" role="button">
+                        ایجاد Todo
+                    </a>
+
+                </div>
 
                 <ol class="list-group list-group-numbered p-0 my-4">
 
