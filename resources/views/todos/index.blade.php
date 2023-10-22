@@ -27,8 +27,10 @@
 
                             </div>
 
-                            <a class="btn btn-danger btn-sm mx-2" href="#" role="button">پایان دادن</a>
-                            <a class="btn btn-dark btn-sm mx-2" href="#" role="button">نمایش</a>
+                            <a class="btn btn-dark btn-sm mx-2" href="{{ route('todos.show', ['id' => $todo->id]) }}"
+                                role="button">
+                                نمایش
+                            </a>
 
                         </li>
                     @endforeach

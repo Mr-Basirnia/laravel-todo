@@ -29,6 +29,7 @@ class TodoController extends Controller
      */
     public function show(Request $request, Todo $id)
     {
-        return view('todos.show', compact('id'));
+        $todo = $id;
+        return view('todos.show', compact('todo'));
     }
 }
