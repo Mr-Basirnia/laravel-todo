@@ -14,6 +14,6 @@ class TodoController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        return view('todos.index');
     }
 }
