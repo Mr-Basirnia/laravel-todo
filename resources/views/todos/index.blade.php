@@ -40,6 +40,17 @@
                                 نمایش
                             </a>
 
+                            @if (!$todo->isCompleted)
+                                <form action="{{ route('todos.done', ['id' => $todo->id]) }}" method="POST"
+                                    class="d-inline">
+                                    @csrf
+                                    @method('put')
+                                    <button class="btn btn-outline-secondary btn-sm float-start mx-1">
+                                        تغییر به انجام شده
+                                    </button>
+                                </form>
+                            @endif
+
                         </li>
                     @endforeach
 

@@ -122,4 +122,23 @@ class TodoController extends Controller
         alert()->error('تسک با موفقیت حذف شد', 'دقت کنید');
         return redirect()->route('todos.index');
     }
+
+
+    /**
+     * change todo status
+     *
+     * @param Request $request
+     * @param Todo $id
+     * @return void
+     */
+    public function done(Request $request, Todo $id)
+    {
+        $todo = $id;
+        $todo->update([
+            'isCompleted' => ! $todo->isCompleted,
+        ]);
+
+        alert()->success('تسک با موفقیت ویرایش شد', 'با تشکر');
+        return redirect()->route('todos.index');
+    }
 }

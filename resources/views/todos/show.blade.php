@@ -21,9 +21,15 @@
                         role="button">
                         ویرایش
                     </a>
-                    @if (!$todo->isCompleted)
-                        <a class="btn btn-success btn-sm float-start mx-1" href="#" role="button">تغییر وضعیت</a>
-                    @endif
+                    {{-- @if (!$todo->isCompleted) --}}
+                    <form action="{{ route('todos.done', ['id' => $todo->id]) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('put')
+                        <button class="btn btn-success btn-sm float-start mx-1">
+                            تغییر وضعیت
+                        </button>
+                    </form>
+                    {{-- @endif --}}
 
                 </div>
                 <div class="card-body">
