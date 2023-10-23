@@ -11,7 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+    require('sweetalert');
+} catch (e) { }
 
 window.axios = require('axios');
 

@@ -64,6 +64,7 @@ class TodoController extends Controller
             'description' => $request->todoDecription,
         ]);
 
+        alert()->success('تسک با موفقیت ایجاد شد', 'با تشکر');
         return redirect()->route('todos.index');
     }
 }
