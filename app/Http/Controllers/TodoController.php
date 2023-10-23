@@ -67,4 +67,42 @@ class TodoController extends Controller
         alert()->success('تسک با موفقیت ایجاد شد', 'با تشکر');
         return redirect()->route('todos.index');
     }
+
+
+    /**
+     * edit todo
+     *
+     * @param Request $request
+     * @param Todo $id
+     */
+    public function edit(Request $request, Todo $id)
+    {
+        $todo = $id;
+        return view('todos.edit', compact('todo'));
+    }
+
+    /**
+     * update todo
+     *
+     * @param Request $request
+     * @param Todo $id
+     * @return void
+     */
+    public function update(Request $request, Todo $id)
+    {
+        $todo = $id;
+
+        $request->validate([
+            'todoTitle' => 'required',
+            'todoDecription' => 'required'
+        ]);
+
+        $todo->update([
+            'title' => $request->todoTitle,
+            'description' => $request->todoDecription,
+        ]);
+
+        alert()->success('تسک با موفقیت ویرایش شد', 'با تشکر');
+        return redirect()->route('todos.show', ['id' => $todo->id]);
+    }
 }
