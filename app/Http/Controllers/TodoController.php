@@ -105,4 +105,21 @@ class TodoController extends Controller
         alert()->success('تسک با موفقیت ویرایش شد', 'با تشکر');
         return redirect()->route('todos.show', ['id' => $todo->id]);
     }
+
+
+    /**
+     * delete todo
+     *
+     * @param Request $request
+     * @param Todo $id
+     * @return void
+     */
+    public function delete(Request $request, Todo $id)
+    {
+        $todo = $id;
+        $todo->delete();
+
+        alert()->error('تسک با موفقیت حذف شد', 'دقت کنید');
+        return redirect()->route('todos.index');
+    }
 }

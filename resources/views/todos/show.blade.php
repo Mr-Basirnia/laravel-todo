@@ -9,7 +9,14 @@
                 <div class="card-header">
                     وضعیت : <mark>{{ Str::is(0, $todo->isCompleted) ? 'انجام نشده' : 'انجام شده' }}</mark>
 
-                    <a class="btn btn-danger btn-sm float-start mx-1" href="#" role="button">پاک کردن</a>
+                    <form action="{{ route('todos.delete', ['id' => $todo->id]) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger btn-sm float-start mx-1">
+                            پاک کردن
+                        </button>
+                    </form>
+
                     <a class="btn btn-warning btn-sm float-start mx-1" href="{{ route('todos.edit', ['id' => $todo->id]) }}"
                         role="button">
                         ویرایش
