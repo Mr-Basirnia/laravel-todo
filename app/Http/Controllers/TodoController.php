@@ -15,7 +15,7 @@ class TodoController extends Controller
      */
     public function index(Request $request)
     {
-        $todos = Todo::paginate(5);
+        $todos = Todo::latest()->paginate(5);
         return view('todos.index', compact('todos'));
     }
 
@@ -54,6 +54,16 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'todoTitle' => 'required',
+            'todoDecription' => 'required'
+        ]);
+
+        Todo::create([
+            'title' => $request->todoTitle,
+            'description' => $request->todoDecription,
+        ]);
+
+        return redirect()->route('todos.index');
     }
 }
